@@ -11,6 +11,7 @@ class ToDo_page extends StatefulWidget {
 
 class _ToDo_pageState extends State<ToDo_page> {
   List ToDoList=[];
+  int val=0;
 String inputItem="";
   MyInputOnChange(value)
   {
@@ -24,7 +25,12 @@ String inputItem="";
       ToDoList.add({'item':inputItem});
     });
   }
-
+  DeleteItem(index)
+  {
+    setState(() {
+      ToDoList.removeAt(index);
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +65,10 @@ String inputItem="";
 
                         children: [
                           Expanded(flex:80,child:Text(ToDoList[index]['item'].toString())),
-                          Expanded(flex:20,child:TextButton(onPressed: (){}, child: Icon(Icons.delete,color: Colors.red,),))
+                          Expanded(flex:20,child:TextButton(onPressed: (){
+
+                            DeleteItem(index);
+                          }, child: Icon(Icons.delete,color: Colors.red,),))
                         
                       ],)
 
