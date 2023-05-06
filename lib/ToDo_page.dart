@@ -22,7 +22,9 @@ class _ToDo_pageState extends State<ToDo_page> {
             Expanded(flex:10,child: Row(
               children: [
                 Expanded(flex:70,child: TextField(decoration: AppInputDecoration("List Item"),)),
-                Expanded(flex:30,child: ElevatedButton(onPressed: (){}, child: Text("ADD"),))
+                Expanded(flex:30,child: ElevatedButton(onPressed: (){
+
+                }, child: Text("ADD"), style:MyBtnStyle()))
               ],
             )),
             Expanded(flex:90,
